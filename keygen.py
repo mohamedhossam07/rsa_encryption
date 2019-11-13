@@ -7,7 +7,7 @@ def hcfnaive(a,b):
         return a
     else:
         return hcfnaive(b,a%b)
-
+#
 def main():
 
     mlen = 512
