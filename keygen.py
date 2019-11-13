@@ -45,21 +45,15 @@ def main():
         g = gcd(e, fi)
 
     #g = gcd(e, fi)
-    print('m is = '+str(m))
-    print('')
-    print(isPrime(m))
-    print('')
-    print('r is = '+str(r))
-    print('')
-    print(isPrime(r))
+    print('Phi is = '+str(fi))
     print('')
     print('e is = '+str(e))
     print(isPrime(e))
     print('')
-
-
     d = multiplicative_inverse(e, fi)
-    print(d)
+    #test(e,d,fi)
+    print('d is = '+str(d))
+    print('')
 
 
 def egcd(a, b):
