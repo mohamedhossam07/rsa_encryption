@@ -1,2 +1,2 @@
-# rsa_encryption
+# RSA Encryption
 RSA asymmetric encryption implementation
