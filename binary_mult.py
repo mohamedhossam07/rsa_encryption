@@ -5,8 +5,9 @@ def BitAdd(m, n, length):
     m -- Binary number in string
     n -- Same as above
     length -- The length of returned number (overflowed bit will be ignored)
-
+self.assert_(boolean expression, 'message')
     Returns: string
+    A
     """
 
     lmax = max(len(m), len(n))
