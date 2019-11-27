@@ -1,5 +1,13 @@
 from random import *
+from binary_mult import *
+from keygen_extras import *
 
+
+def power(x, y, p):
+    #temp = x
+    #for i in range(0,y-1):
+        #x = karatsubaMultiplication(x,temp)
+    return (x ** y )  % p
 
 def two_com(m,mlen):
     if m < 0:

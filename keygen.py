@@ -1,6 +1,8 @@
 from binary_mult import *
 from keygen_extras import *
 from random import *
+import random
+
 
 def hcfnaive(a,b):
     if(b==0):
@@ -45,14 +47,14 @@ def main():
         g = gcd(e, fi)
 
     #g = gcd(e, fi)
-    print('Phi is = '+str(fi))
+    print('n is = '+str(fi))
     print('')
-    print('e is = '+str(e))
+    print('Public Key is = '+str(e))
     print(isPrime(e))
     print('')
     d = multiplicative_inverse(e, fi)
     #test(e,d,fi)
-    print('d is = '+str(d))
+    print('Private Key is = '+str(d))
     print('')
 
 
@@ -63,24 +65,32 @@ def egcd(a, b):
         g, x, y = egcd(b % a, a)
         return (g, y - (b // a) * x, x)
 
+def isPrime(n, k=1):
 
-def isPrime(n, k=5): # miller-rabin
-    from random import randint
-    if n < 2: return False
-    for p in [2,3,5,7,11,13,17,19,23,29]:
-        if n % p == 0: return n == p
-    s, d = 0, n-1
-    while d % 2 == 0:
-        s, d = s+1, d/2
-    for i in range(k):
-        x = pow(randint(2, n-1), d, n)
-        if x == 1 or x == n-1: continue
-        for r in range(1, s):
-            x = (x * x) % n
-            if x == 1: return False
-            if x == n-1: break
-        else: return False
+    if n == 2:
+        return True
+
+    if n % 2 == 0:
+        return False
+
+    r, s = 0, n - 1
+    while s % 2 == 0:
+        r += 1
+        s //= 2
+    for _ in range(0,k):
+        a = random.randrange(2, n - 1)
+        x = pow(a, s, n)
+        if x == 1 or x == n - 1:
+            continue
+        for _ in range(0,r - 1):
+            x = power(x, 2, n)
+            if x == n - 1:
+                break
+        else:
+            return False
     return True
+
+
 
 def gcd(a, b):
     while b != 0:
@@ -89,5 +99,5 @@ def gcd(a, b):
 
 
 if __name__ == "__main__":
-
+    #print(power(3,3,1))
     main()
