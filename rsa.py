@@ -41,7 +41,7 @@ def inttostr(a):
         intstr = '0' + intstr
     while i < len(intstr):
         #print(a[i:i+2])
-        out = out + chr(int(intstr[i:i+3]))
+        #out = out + chr(int(intstr[i:i+3]))
         print(int(intstr[i:i+3]))
         i += 3
     return out
