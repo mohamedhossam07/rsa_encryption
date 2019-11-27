@@ -7,8 +7,10 @@ def main():
         n=input('Enter your n : ')
         e=input('Enter your Private "d" : ')
         m=input('Enter your Message : ')
+        m = strtoint(m)
         o = karatsubaMultiplication(int(m),int(e))
         o = o % int(n)
+        print('The Output is : ')
         print(o)
     elif what == '2':
         n=input('Enter your n : ')
@@ -16,16 +18,49 @@ def main():
         m=input('Enter your encrypted data : ')
         o =karatsubaMultiplication (int(m),int(d))
         o = o % int(n)
-        print(o)
+        print('The Output is : ')
+        print(inttostr(o))
     elif what == '3':
         n=input('Enter your n : ')
         d=input('Enter your Public : ')
         m=input('Enter your private : ')
         o = (int(m)*int(d))
         o = o % int(n)
+        print('The Output is : ')
         print(o)
     else:
         print('Enter 1 or 2 !!!')
 
 
+def inttostr(a):
+    intstr = str(a)
+    out = ''
+    i = 0
+    print(str(a))
+    if int(intstr[0]) > 4 :
+        intstr = '0' + intstr
+    while i < len(intstr):
+        #print(a[i:i+2])
+        out = out + chr(int(intstr[i:i+3]))
+        print(int(intstr[i:i+3]))
+        i += 3
+    return out
+
+def strtoint(a):
+    out = ''
+    ap = ''
+    for i in range(0,len(a)):
+        ap = ''
+        if len(str(ord(a[i]))) == 1 :
+            ap = '00'
+        elif len(str(ord(a[i]))) == 2 :
+            ap = '0'
+        elif len(str(ord(a[i]))) == 3:
+            ap == ''
+        out = out + ap +str(ord(a[i]))
+    print ('your int message is : '+str(out))
+    return out
+
+
 main()
+#print(inttostr(strtoint('ahmed msh zay hamada ka al 3ada')))
