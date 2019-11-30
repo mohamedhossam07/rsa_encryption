@@ -33,7 +33,6 @@ def main():
 
     e = rand_bin(eleng)
     e = two_com(e,eleng)
-    #print(e)
     m = binary2dec(m)
     r = binary2dec(r)
     fi = (m-1)*(r-1)
@@ -46,14 +45,12 @@ def main():
             e = binary2dec(e)
         g = gcd(e, fi)
 
-    #g = gcd(e, fi)
     print('n is = '+str(fi))
     print('')
     print('Public Key is = '+str(e))
     print(isPrime(e))
     print('')
     d = multiplicative_inverse(e, fi)
-    #test(e,d,fi)
     print('Private Key is = '+str(d))
     print('')
 
@@ -99,5 +96,4 @@ def gcd(a, b):
 
 
 if __name__ == "__main__":
-    #print(power(3,3,1))
     main()

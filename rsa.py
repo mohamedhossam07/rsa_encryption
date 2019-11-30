@@ -2,7 +2,7 @@ from binary_mult import *
 from keygen_extras import *
 
 def main():
-    what = input('[1]Encrypt or [2]Decrypt or [3]Check : ')
+    what = input('[1]Encrypt or [2]Decrypt : ')
     if what == '1':
         n=input('Enter your n : ')
         e=input('Enter your Private "d" : ')
@@ -20,14 +20,6 @@ def main():
         o = o % int(n)
         print('The Output is : ')
         print(inttostr(o))
-    elif what == '3':
-        n=input('Enter your n : ')
-        d=input('Enter your Public : ')
-        m=input('Enter your private : ')
-        o = (int(m)*int(d))
-        o = o % int(n)
-        print('The Output is : ')
-        print(o)
     else:
         print('Enter 1 or 2 !!!')
 
@@ -36,13 +28,10 @@ def inttostr(a):
     intstr = str(a)
     out = ''
     i = 0
-    print(str(a))
     if int(intstr[0]) > 4 :
         intstr = '0' + intstr
     while i < len(intstr):
-        #print(a[i:i+2])
-        #out = out + chr(int(intstr[i:i+3]))
-        print(int(intstr[i:i+3]))
+        out = out + chr(int(intstr[i:i+3]))
         i += 3
     return out
 
@@ -63,4 +52,3 @@ def strtoint(a):
 
 
 main()
-#print(inttostr(strtoint('ahmed msh zay hamada ka al 3ada')))
