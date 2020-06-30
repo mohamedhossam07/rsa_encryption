@@ -3,7 +3,7 @@ from keygen_extras import *
 
 def main():
     what = input('[1]Encrypt or [2]Decrypt : ')
-    if what == '1':
+    if what == 1 :
         n=raw_input('Enter your n : ')
         e=raw_input('Enter your Private "d" : ')
         m=raw_input('Enter your Message : ')
@@ -12,7 +12,7 @@ def main():
         o = o % int(n)
         print('The Output is : ')
         print(o)
-    elif what == '2':
+    elif what == 2 :
         n=raw_input('Enter your n : ')
         d=raw_input('Enter your Public "e" : ')
         m=raw_input('Enter your encrypted data : ')
