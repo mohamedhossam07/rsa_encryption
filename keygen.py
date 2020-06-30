@@ -48,7 +48,6 @@ def main():
     print('n is = '+str(fi))
     print('')
     print('Public Key is = '+str(e))
-    print(isPrime(e))
     print('')
     d = multiplicative_inverse(e, fi)
     print('Private Key is = '+str(d))
