@@ -1,13 +1,11 @@
 # RSA Encryption
 RSA asymmetric encryption implementation using python,
-for more informations check: 
-
+for more informations check: https://en.wikipedia.org/wiki/RSA_(cryptosystem)
 
 
 ### How to run it?
 
-You will need : https://en.wikipedia.org/wiki/RSA_(cryptosystem)
-
+You will need : 
 python 2.7 
 
 
